@@ -77,7 +77,7 @@ public class CustomerController {
 		product.setProduct_Description("apple iPhone 12 mini 256 GB");
 		product.setProduct_Price(75000);
 		product.setProduct_Review("best iPhone");
-		product.setProduct_Type("Mobile");
+		product.setProduct_Category("Mobile");
 		product.setCart(null);
 		session.save(product);
 		product_List.add(product);

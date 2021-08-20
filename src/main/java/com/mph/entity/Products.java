@@ -17,7 +17,7 @@ public class Products {
 	private int product_Id;
 //	@NotNull
 	private String product_Name;
-	private String product_Type;
+	private String product_Category;
 	
 	private Blob product_img;
 	private int product_Price;
@@ -37,12 +37,12 @@ public class Products {
 		super();
 	}
 
-	public Products(int product_Id, String product_Name, String product_Type, Blob product_img, int product_Price,
+	public Products(int product_Id, String product_Name, String product_Category, Blob product_img, int product_Price,
 			String product_Review, String product_Description, Cart cart, Seller seller) {
 		super();
 		this.product_Id = product_Id;
 		this.product_Name = product_Name;
-		this.product_Type = product_Type;
+		this.product_Category = product_Category;
 		this.product_img = product_img;
 		this.product_Price = product_Price;
 		this.product_Review = product_Review;
@@ -67,12 +67,12 @@ public class Products {
 		this.product_Name = product_Name;
 	}
 
-	public String getProduct_Type() {
-		return product_Type;
+	public String getProduct_Category() {
+		return product_Category;
 	}
 
-	public void setProduct_Type(String product_Type) {
-		this.product_Type = product_Type;
+	public void setProduct_Category(String product_Category) {
+		this.product_Category = product_Category;
 	}
 
 	public Blob getProduct_img() {
@@ -125,12 +125,11 @@ public class Products {
 
 	@Override
 	public String toString() {
-		return "Products [product_Id=" + product_Id + ", product_Name=" + product_Name + ", product_Type="
-				+ product_Type + ", product_img=" + product_img + ", product_Price=" + product_Price
-				+ ", product_Review=" + product_Review + ", product_Description=" + product_Description  + "]";
+		return "Products [product_Id=" + product_Id + ", product_Name=" + product_Name + ", product_Category="
+				+ product_Category + ", product_img=" + product_img + ", product_Price=" + product_Price
+				+ ", product_Review=" + product_Review + ", product_Description=" + product_Description + "]";
 	}
 
-	
 
 	
 	
