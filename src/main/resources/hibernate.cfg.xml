@@ -24,6 +24,9 @@
 <!-- 		<mapping class="com.mph.entity.User"/> -->
 		<mapping class="com.mph.entity.Cart"/>
 		<mapping class="com.mph.entity.Orders"/>
+                <mapping class="com.mph.entity.Products"/>
+		<mapping class="com.mph.dao.ProductDao"/>
+		<mapping class="com.mph.dao.ProductDaoImpl"/>	
 		
 	</session-factory>
 </hibernate-configuration>
