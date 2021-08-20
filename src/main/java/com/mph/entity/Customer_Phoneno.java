@@ -13,7 +13,7 @@ public class Customer_Phoneno {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int phoneno_Id;
-	private int customer_phoneno;
+	private long customer_phoneno;
 	
 	@ManyToOne(targetEntity = Customer.class)
 	@JoinColumn(name="user_Id",referencedColumnName = "user_Id")
@@ -25,7 +25,7 @@ public class Customer_Phoneno {
 	}
 
 
-	public Customer_Phoneno(int phoneno_Id, int customer_phoneno, Customer customer) {
+	public Customer_Phoneno(int phoneno_Id, long customer_phoneno, Customer customer) {
 		super();
 		this.phoneno_Id = phoneno_Id;
 		this.customer_phoneno = customer_phoneno;
@@ -43,12 +43,12 @@ public class Customer_Phoneno {
 	}
 
 
-	public int getCustomer_phoneno() {
+	public long getCustomer_phoneno() {
 		return customer_phoneno;
 	}
 
 
-	public void setCustomer_phoneno(int customer_phoneno) {
+	public void setCustomer_phoneno(long customer_phoneno) {
 		this.customer_phoneno = customer_phoneno;
 	}
 
@@ -65,8 +65,9 @@ public class Customer_Phoneno {
 
 	@Override
 	public String toString() {
-		return "Customer_Phoneno [phoneno_Id=" + phoneno_Id + ", customer_phoneno=" + customer_phoneno  + "]";
+		return "Customer_Phoneno [phoneno_Id=" + phoneno_Id + ", customer_phoneno=" + customer_phoneno + "]";
 	}
+
 
 		
 }
