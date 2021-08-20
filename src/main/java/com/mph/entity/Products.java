@@ -28,13 +28,17 @@ public class Products {
 	@ManyToOne(targetEntity = Cart.class)
 	@JoinColumn(name = "cart_Id", referencedColumnName = "cart_Id")
 	private Cart cart;
+	
+	@ManyToOne(targetEntity = Seller.class)
+	@JoinColumn(name = "user_Id",referencedColumnName = "user_Id")
+	private Seller seller;
 
 	public Products() {
 		super();
 	}
 
 	public Products(int product_Id, String product_Name, String product_Type, Blob product_img, int product_Price,
-			String product_Review, String product_Description, Cart cart) {
+			String product_Review, String product_Description, Cart cart, Seller seller) {
 		super();
 		this.product_Id = product_Id;
 		this.product_Name = product_Name;
@@ -44,6 +48,7 @@ public class Products {
 		this.product_Review = product_Review;
 		this.product_Description = product_Description;
 		this.cart = cart;
+		this.seller = seller;
 	}
 
 	public int getProduct_Id() {
@@ -110,12 +115,22 @@ public class Products {
 		this.cart = cart;
 	}
 
+	public Seller getSeller() {
+		return seller;
+	}
+
+	public void setSeller(Seller seller) {
+		this.seller = seller;
+	}
+
 	@Override
 	public String toString() {
 		return "Products [product_Id=" + product_Id + ", product_Name=" + product_Name + ", product_Type="
 				+ product_Type + ", product_img=" + product_img + ", product_Price=" + product_Price
-				+ ", product_Review=" + product_Review + ", product_Description=" + product_Description + "]";
+				+ ", product_Review=" + product_Review + ", product_Description=" + product_Description  + "]";
 	}
+
+	
 
 	
 	

@@ -1,12 +1,20 @@
 package com.mph.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Entity
 public class Login {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int user_Id;
+	
 	private String username;
 	
 	private String password;
@@ -15,14 +23,22 @@ public class Login {
 
 	public Login() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	public Login(String username, String password, String user_Type) {
+	public Login(int user_Id, String username, String password, String user_Type) {
 		super();
+		this.user_Id = user_Id;
 		this.username = username;
 		this.password = password;
 		this.user_Type = user_Type;
+	}
+
+	public int getUser_Id() {
+		return user_Id;
+	}
+
+	public void setUser_Id(int user_Id) {
+		this.user_Id = user_Id;
 	}
 
 	public String getUsername() {
@@ -51,9 +67,8 @@ public class Login {
 
 	@Override
 	public String toString() {
-		return "Login [username=" + username + ", password=" + password + ", user_Type=" + user_Type + "]";
+		return "Login [user_Id=" + user_Id + ", username=" + username + ", password=" + password + ", user_Type="
+				+ user_Type + "]";
 	}
-	
-	
 
 }

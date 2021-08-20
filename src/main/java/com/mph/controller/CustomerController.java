@@ -12,10 +12,12 @@ import com.mph.entity.Cart;
 import com.mph.entity.Customer;
 import com.mph.entity.Customer_Address;
 import com.mph.entity.Customer_Phoneno;
+import com.mph.entity.Login;
 import com.mph.entity.Name;
 import com.mph.entity.Orders;
 import com.mph.entity.Payment;
 import com.mph.entity.Products;
+import com.mph.entity.Seller;
 
 
 //@Controller
@@ -29,7 +31,20 @@ public class CustomerController {
 	{
 		txn = session.beginTransaction();
 		
+		Login login = new Login();
+		login.setUsername("vivek6");
+		login.setUser_Type("customr");
+		login.setPassword("123");
+		session.save(login);
+		
+		
+		
+		
+		
 		Customer customer = new Customer();
+		customer.setUsername("vivek26");
+		customer.setUser_Type("customer");
+		customer.setPassword("1234");
 		
 
 		String fname = "Vivek";
@@ -38,7 +53,7 @@ public class CustomerController {
 		
 		Customer_Phoneno customer_phoneno = new Customer_Phoneno();
 		List<Customer_Phoneno> customer_Phoneno_list = new ArrayList<Customer_Phoneno>();
-		customer_phoneno.setCustomer_phoneno(954584848);
+		customer_phoneno.setCustomer_phoneno(9545848485l);
 		customer_phoneno.setCustomer(customer);
 		customer_Phoneno_list.add(customer_phoneno);
 		session.save(customer_phoneno);
@@ -66,6 +81,17 @@ public class CustomerController {
 		product.setCart(null);
 		session.save(product);
 		product_List.add(product);
+		
+		Seller seller = new Seller();
+		seller.setSeller_name("Amazon");
+		seller.setSeller_phoneno(8484546525l);
+		seller.setUsername("amazon26");
+		seller.setUser_Type("seller");
+		seller.setPassword("1234");
+		seller.setProducts(product_List);
+		session.save(seller);
+		product.setSeller(seller);
+		session.save(product);
 		
 		
 		Cart cart = new Cart();
