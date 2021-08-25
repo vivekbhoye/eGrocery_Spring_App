@@ -32,7 +32,10 @@
 		<mapping class="com.mph.dao.CartDaoImpl"/>
 		<mapping class="com.mph.service.CartServiceImpl"/>
 		<mapping class="com.mph.controller.CartController"/>
-		
+		<mapping class="com.mph.dao.PaymentDao"/>
+		<mapping class="com.mph.dao.PaymentDaoImpl"/>
+		<mapping class="com.mph.service.PaymentService"/>
+		<mapping class="com.mph.service.PaymentServiceImpl"/>
 			
 		
 	</session-factory>
