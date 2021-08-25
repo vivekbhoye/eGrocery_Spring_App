@@ -1,5 +1,7 @@
 package com.mph.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,7 +13,7 @@ import javax.persistence.OneToOne;
 import org.hibernate.annotations.ManyToAny;
 
 @Entity
-public class Orders {
+public class Orders implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

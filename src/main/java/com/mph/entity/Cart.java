@@ -1,5 +1,6 @@
 package com.mph.entity;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -10,7 +11,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Cart {
+public class Cart implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

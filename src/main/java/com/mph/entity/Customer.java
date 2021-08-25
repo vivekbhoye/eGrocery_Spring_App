@@ -1,5 +1,6 @@
 package com.mph.entity;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -13,7 +14,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Customer extends Login {
+public class Customer extends Login implements Serializable{
 	
 //	@Id
 //	@GeneratedValue(strategy = GenerationType.AUTO)

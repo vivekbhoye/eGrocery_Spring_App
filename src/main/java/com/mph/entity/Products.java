@@ -1,16 +1,19 @@
 package com.mph.entity;
 
+import java.io.Serializable;
 import java.sql.Blob;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Products {
+public class Products implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,9 +22,11 @@ public class Products {
 	private String product_Name;
 	private String product_Category;
 	
-	private Blob product_img;
+	private String product_img;
 	private int product_Price;
+	@Lob
 	private String product_Review;
+	@Lob
 	private String product_Description;
 	
 	
@@ -37,7 +42,7 @@ public class Products {
 		super();
 	}
 
-	public Products(int product_Id, String product_Name, String product_Category, Blob product_img, int product_Price,
+	public Products(int product_Id, String product_Name, String product_Category, String product_img, int product_Price,
 			String product_Review, String product_Description, Cart cart, Seller seller) {
 		super();
 		this.product_Id = product_Id;
@@ -75,11 +80,11 @@ public class Products {
 		this.product_Category = product_Category;
 	}
 
-	public Blob getProduct_img() {
+	public String getProduct_img() {
 		return product_img;
 	}
 
-	public void setProduct_img(Blob product_img) {
+	public void setProduct_img(String product_img) {
 		this.product_img = product_img;
 	}
 
@@ -127,8 +132,10 @@ public class Products {
 	public String toString() {
 		return "Products [product_Id=" + product_Id + ", product_Name=" + product_Name + ", product_Category="
 				+ product_Category + ", product_img=" + product_img + ", product_Price=" + product_Price
-				+ ", product_Review=" + product_Review + ", product_Description=" + product_Description + "]";
+				+ ", product_Review=" + product_Review + ", product_Description=" + product_Description + ", cart="
+				+ cart + ", seller=" + seller + "]";
 	}
+
 
 
 	
