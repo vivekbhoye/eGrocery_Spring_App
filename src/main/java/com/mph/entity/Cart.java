@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -20,7 +21,7 @@ public class Cart implements Serializable {
 	private int no_Of_Items;
 	private int total_Amount;
 	
-	@OneToMany
+	@OneToMany(fetch = FetchType.EAGER)
 	private List<Products> products;
 	
 	@OneToOne

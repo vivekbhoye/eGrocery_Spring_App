@@ -11,7 +11,8 @@ public interface CartDao {
 	
 
 	
-	public List<Products> showCartProducts(int cart_Id);
+//	public List<Products> showCartProducts(int cart_Id);
+	public Cart showCartProducts(int cart_Id);
 	
 	public Cart deleteCartItems(int cart_Id);
 	

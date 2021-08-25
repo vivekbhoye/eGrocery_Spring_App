@@ -25,10 +25,10 @@ public class CartRestController {
 //		public ResponseEntity<List<Cart>> showCartItems(@PathVariable("cart_Id") int cart_Id){
 		
 		@GetMapping("/showCartItems/{cart_Id}")
-		public List<Products> showCartItems(@PathVariable("cart_Id") int cart_Id){
-			List<Products> products = cartService.showCartProducts(cart_Id);
-			return products;
-			
+		public Cart showCartItems(@PathVariable("cart_Id") int cart_Id){
+			Cart cart = cartService.showCartProducts(cart_Id);
+			System.out.println("till here");
+			return cart;
 		}
 		
 		@PostMapping("/createCart")

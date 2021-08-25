@@ -24,9 +24,13 @@ public class CartServiceImpl implements CartService{
 
 	
 
+//	@Override
+//	public List<Products> showCartProducts(int cart_Id) {
+//		// TODO Auto-generated method stub
+//		return cartDao.showCartProducts(cart_Id);
+//	}
 	@Override
-	public List<Products> showCartProducts(int cart_Id) {
-		// TODO Auto-generated method stub
+	public Cart showCartProducts(int cart_Id) {
 		return cartDao.showCartProducts(cart_Id);
 	}
 
