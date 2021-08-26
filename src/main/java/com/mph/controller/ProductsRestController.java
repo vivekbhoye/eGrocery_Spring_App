@@ -26,7 +26,7 @@ import com.mph.service.ProductsService;
 
 @RestController
 @RequestMapping(value = "/products")
-@CrossOrigin(origins = "http://localhost:4200",methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE },allowCredentials = "true",allowedHeaders = "*")
+@CrossOrigin(origins = "*",methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE },allowCredentials = "true",allowedHeaders = "*")
 public class ProductsRestController {
 	
 	@Autowired
