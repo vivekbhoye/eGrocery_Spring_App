@@ -4,6 +4,12 @@ import java.util.List;
 
 import com.mph.entity.Products;
 
+/**
+ * 
+ * @author Vivek bhoye
+ *
+ */
+
 public interface ProductsService {
 	
 	public void addProduct(Products product);

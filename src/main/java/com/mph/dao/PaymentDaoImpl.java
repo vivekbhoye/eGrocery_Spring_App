@@ -7,6 +7,12 @@ import org.springframework.stereotype.Repository;
 
 import com.mph.entity.Payment;
 
+/**
+ * 
+ * @author Vivek bhoye
+ *
+ */
+
 @Repository
 public class PaymentDaoImpl implements PaymentDao {
 	

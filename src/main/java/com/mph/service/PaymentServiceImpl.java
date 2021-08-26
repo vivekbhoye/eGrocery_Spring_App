@@ -8,6 +8,12 @@ import com.mph.dao.PaymentDao;
 import com.mph.dao.PaymentDaoImpl;
 import com.mph.entity.Payment;
 
+/**
+ * 
+ * @author Vivek bhoye
+ *
+ */
+
 @Service
 @Transactional
 public class PaymentServiceImpl implements PaymentService{
