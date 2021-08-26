@@ -1,0 +1,137 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "E-Grocery"
+  },
+  "host": "localhost:8080",
+  "basePath": "/eGrocery_Spring_App",
+  "tags": [
+    {
+      "name": "Products",
+      "description": "CRUD operations with Role"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/products/allProducts": {
+      "get": {
+        "tags": [
+          "product"
+        ],
+        "summary": "Finds all Products",
+        "operationId": " allProducts",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/products/addProduct": {
+      "post": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "create product",
+        "description": "",
+        "operationId": "createProduct",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "product to be added",
+            "required": true,
+            "schema": {}
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Role not Found"
+          }
+        }
+      }
+    },
+    "/products/updateProduct": {
+      "put": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "Update an existing Product",
+        "description": "",
+        "operationId": "updateProduct",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Role object that needs to be updated",
+            "required": true,
+            "schema": {}
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Role not Found"
+          }
+        }
+      }
+    },
+    "/products/deleteProduct/{id}": {
+      "delete": {
+        "tags": [
+          "USER"
+        ],
+        "summary": "Deletes a product",
+        "description": "",
+        "operationId": "deleteproduct",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Product id to be deleted",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Role not found"
+          }
+        }
+      }
+    }
+  }
+}
