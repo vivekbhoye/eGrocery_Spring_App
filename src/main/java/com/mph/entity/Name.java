@@ -1,7 +1,11 @@
 package com.mph.entity;
 
 import javax.persistence.Embeddable;
-
+/**
+ * 
+ * @author Vivek bhoye
+ *
+ */
 @Embeddable
 public class Name {
 	

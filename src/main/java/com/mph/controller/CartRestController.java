@@ -18,6 +18,11 @@ import com.mph.entity.Cart;
 import com.mph.entity.Products;
 import com.mph.service.CartService;
 import com.mph.service.CartServiceImpl;
+/**
+ * 
+ * @author Vivek bhoye
+ *
+ */
 
 @RestController
 @RequestMapping(value="/cart")
@@ -27,13 +32,21 @@ public class CartRestController {
 		@Autowired
 		CartService cartService;
 //		public ResponseEntity<List<Cart>> showCartItems(@PathVariable("cart_Id") int cart_Id){
-		
+		/**
+		 * For fetching cart items by cart id
+		 
+		 * @return cart items
+		 */
 		@GetMapping("/showCartItems/{cart_Id}")
 		public Cart showCartItems(@PathVariable("cart_Id") int cart_Id){
 			Cart cart = cartService.showCartProducts(cart_Id);
 			System.out.println("till here");
 			return cart;
 		}
+		/**
+		 * For Creating cart
+		 
+		 */
 		
 		@PostMapping("/createCart")
 		public Cart createCart(@RequestBody(required = false) Cart cart) {

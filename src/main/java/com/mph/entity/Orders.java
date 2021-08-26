@@ -11,7 +11,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 import org.hibernate.annotations.ManyToAny;
-
+/**
+ * 
+ * @author Vivek bhoye
+ *
+ */
 @Entity
 public class Orders implements Serializable{
 

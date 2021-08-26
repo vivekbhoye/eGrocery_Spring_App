@@ -8,7 +8,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.OneToOne;
-
+/**
+ * 
+ * @author Vivek bhoye
+ *
+ */
 @Entity
 public class Payment implements Serializable{
 
