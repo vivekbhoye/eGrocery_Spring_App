@@ -24,9 +24,9 @@ public class Payment implements Serializable{
 	private String Address;
 	private String city;
 	private String state;
-//	private int zip;
+	
 	private String nameOnCard;
-//	private long cardNumber;
+	
 	
 	@OneToOne
 	private Orders orders;
@@ -35,7 +35,6 @@ public class Payment implements Serializable{
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
 	public Payment(int payment_Id, String payment_Type, int total_Amount, String fullName, String email, String address,
 			String city, String state, String nameOnCard, Orders orders) {
 		super();
@@ -138,11 +137,6 @@ public class Payment implements Serializable{
 				+ state + ", nameOnCard=" + nameOnCard + "]";
 	}
 
-	
-
-	
-
-	
 	
 	
 }

@@ -73,6 +73,16 @@ public class CartDaoImpl implements CartDao{
 ////		List<Products> product_List = query.list();
 //		return product_List;
 	}
+
+	public void createcartbyid(int product_Id) {
+			Query query = getSession().createQuery("from Products prods where product_Id=:product_Id");
+			query.setParameter("product_Id", product_Id);
+			List<Products> product_List = query.list();
+			
+			Query query2 = getSession().createQuery("update Cart cart set products=:products where product_Id=:product_Id");
+			
+//
+	}
 	
 //	@Override
 //	public List<Products> showCartProducts(int cart_Id) {

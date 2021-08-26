@@ -2,6 +2,7 @@ package com.mph.entity;
 
 import java.io.Serializable;
 import java.sql.Blob;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -32,7 +34,7 @@ public class Products implements Serializable{
 	
 	@ManyToOne(targetEntity = Cart.class)
 	@JoinColumn(name = "cart_Id", referencedColumnName = "cart_Id")
-	private Cart cart;
+	private List<Cart> cart;
 	
 	@ManyToOne(targetEntity = Seller.class)
 	@JoinColumn(name = "user_Id",referencedColumnName = "user_Id")
@@ -43,7 +45,7 @@ public class Products implements Serializable{
 	}
 
 	public Products(int product_Id, String product_Name, String product_Category, String product_img, int product_Price,
-			String product_Review, String product_Description, Cart cart, Seller seller) {
+			String product_Review, String product_Description, List<Cart> cart, Seller seller) {
 		super();
 		this.product_Id = product_Id;
 		this.product_Name = product_Name;
@@ -112,11 +114,11 @@ public class Products implements Serializable{
 		this.product_Description = product_Description;
 	}
 
-	public Cart getCart() {
+	public List<Cart> getCart() {
 		return cart;
 	}
 
-	public void setCart(Cart cart) {
+	public void setCart(List<Cart> cart) {
 		this.cart = cart;
 	}
 
@@ -132,9 +134,10 @@ public class Products implements Serializable{
 	public String toString() {
 		return "Products [product_Id=" + product_Id + ", product_Name=" + product_Name + ", product_Category="
 				+ product_Category + ", product_img=" + product_img + ", product_Price=" + product_Price
-				+ ", product_Review=" + product_Review + ", product_Description=" + product_Description + ", cart="
-				+ cart + ", seller=" + seller + "]";
+				+ ", product_Review=" + product_Review + ", product_Description=" + product_Description + "]";
 	}
+
+	
 
 
 

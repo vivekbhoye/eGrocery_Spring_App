@@ -18,4 +18,5 @@ public interface CartDao {
 	
 	public List<Cart> updateCartItems(Cart cart);
 	
+	public void createcartbyid(int product_Id);
 }
