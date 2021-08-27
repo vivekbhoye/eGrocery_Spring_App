@@ -11,7 +11,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.mph.entity.Products;
-
+/**
+ * 
+ * @coauthors Vivek bhoye Sundar raj
+ *
+ */
 @Repository
 public class ProductsDaoImpl implements ProductsDao {
 	
@@ -21,18 +25,28 @@ public class ProductsDaoImpl implements ProductsDao {
 	public ProductsDaoImpl() {
 		super();
 	}
-	
+	/**
+	 * 
+	 * @return Session
+	 */
 	protected Session getSession()
 	{
 		return sessionFactory.getCurrentSession();
 	}
-
+	/**
+	 * For adding products
+	 * @param product
+	 */
 	@Override
 	public void addProduct(Products product) {
 		getSession().save(product);
 		System.out.println("Product added to database");
 	}
+	/**
+	 * For getting all Products
 
+	 * @return Products
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Products> getAllProducts() {
@@ -41,7 +55,11 @@ public class ProductsDaoImpl implements ProductsDao {
 		System.out.println(products_List);
 		return products_List;
 	}
-
+	/**
+	 * For getting a Product
+	* @param product
+	 * @return Product
+	 */
 	@Override
 	public Products getAProduct(Products product) {
 		Criteria c = getSession().createCriteria(Products.class);
@@ -50,7 +68,12 @@ public class ProductsDaoImpl implements ProductsDao {
 		System.out.println("Product retrived from database " + prod);
 		return prod;
 	}
-
+	/**
+	 * For updating Products
+	 * 
+	 * @param Product
+	 * @return list of updated Products
+	 */
 	@Override
 	public List<Products> updateProducts(Products product) {
 		Query query = getSession().createQuery("update Products prod set product_Name=:product_Name,product_Category=:product_Category, product_img=:product_img, product_Price=:product_Price, product_Review=:product_Review, product_Description=:product_Description where product_Id=:product_Id");
@@ -73,6 +96,12 @@ public class ProductsDaoImpl implements ProductsDao {
 	public List<Products> editProducts(Products product) {
 		return null;
 	}
+	/**
+	 * For deleting products
+	 * 
+	 * @param product_Id
+	 * @return list of products after deleting specific products
+	 */
 
 	@Override
 	public List<Products> deleteProducts(int product_Id) {
@@ -85,7 +114,12 @@ public class ProductsDaoImpl implements ProductsDao {
 		} 
 		return getAllProducts();
 	}
-
+	/**
+	 * Searching from Product using product_Id
+	 * 
+	 * @param product_ID
+	 * @return product with that particular productId
+	 */
 	@Override
 	public List<Products> getProductById(int product_Id) {
 		Query query = getSession().createQuery("from Products prod where product_Id=:product_Id");

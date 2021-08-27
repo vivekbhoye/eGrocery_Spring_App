@@ -13,7 +13,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.mph.entity.Cart;
 import com.mph.entity.Products;
-
+/**
+ * 
+ * @author Vivek bhoye
+ *
+ */
 @Repository
 public class CartDaoImpl implements CartDao{
 	
@@ -25,12 +29,18 @@ public class CartDaoImpl implements CartDao{
 	public CartDaoImpl() {
 		super();
 	}
-	
+	/**
+	 * 
+	 * @return Session
+	 */
 	protected Session getSession()
 	{
 		return sessionFactory.getCurrentSession();
 	}
-	
+	/**
+	 * For adding to cart
+	 * @param cart
+	 */
 
 	@Override
 	public void addToCart(Cart cart) {
@@ -38,19 +48,33 @@ public class CartDaoImpl implements CartDao{
 		System.out.println(" added to cart");
 	}
 
-
+	/**
+	 * For deleting cart items using cart id
+	 * 
+	 * @param cart_Id
+	 * @return list of cart items after deleting specific product from cart items
+	 */
 
 	@Override
 	public Cart deleteCartItems(int cart_Id) {
 
 		return null;
 	}
-
+	/**
+	 * For updating cart items
+	 * 
+	 * @param cart
+	 * @return list of updated cart items
+	 */
 	@Override
 	public List<Cart> updateCartItems(Cart cart) {
 		return null;
 	}
-
+	/**
+	 * For getting all cart items
+	 * @param cart_Id
+	 * @return cart items
+	 */
 
 
 	@Override

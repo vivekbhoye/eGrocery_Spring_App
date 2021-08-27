@@ -18,6 +18,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.mph.entity.Products;
 import com.mph.service.ProductsService;
+/**
+ * 
+ * @author Vivek bhoye
+ *
+ */
 
 @RestController
 @RequestMapping(value = "/products")
@@ -26,7 +31,13 @@ public class ProductsRestController {
 	
 	@Autowired
 	ProductsService productsService;
-	
+	/**
+	 * For Fetching all products
+	  * @param Products
+	 * @return
+	 * @throws Exception
+	 * @return list of products
+	 */
 	@GetMapping("/allProducts")
 	public ResponseEntity<List<Products>> getAllProducts(){
 		List<Products> products_List = productsService.getAllProducts();
@@ -39,13 +50,26 @@ public class ProductsRestController {
 		return new ResponseEntity<List<Products>>(products_List,HttpStatus.OK);
 		
 	}
-	
+	/**
+	 * For adding new product
+	 * @param Products
+	 * @return
+	 * @throws Exception
+	 
+	 */
 	@PostMapping("/addProduct")
 	public Products createProduct(@RequestBody Products product) {
 		productsService.addProduct(product);
 		System.out.println("product added.");
 		return product;
 	}
+	/**
+	 * for updating Product
+	 * 
+	 * @param Products
+	 * @return
+	 * @throws Exception
+	 */
 	
 	@PutMapping("/updateProduct")
 	public ResponseEntity<List<Products>> update_Product(@RequestBody Products product)
@@ -56,7 +80,12 @@ public class ProductsRestController {
 		}
 		return new ResponseEntity<List<Products>>(product_List,HttpStatus.OK);
 	}
-	
+	/**
+	 * for deleting user based on productid
+	 * 
+	 * @param productid
+	 * @return
+	 */
 	@DeleteMapping("/deleteProduct/{product_Id}")
 	public ResponseEntity<List<Products>> deleteProduct(@PathVariable("product_Id") int product_Id){
 		List<Products> product_List = productsService.deleteProducts(product_Id);
@@ -66,7 +95,11 @@ public class ProductsRestController {
 		
 		return new ResponseEntity<List<Products>>(product_List,HttpStatus.OK); 
 	}
-	
+	/**
+	 * Find user by productid
+	 * @param products
+	 * @return products
+	 */
 	@GetMapping("/search/{product_Id}")
 	public ResponseEntity<List<Products>> getAProductById(@PathVariable("product_Id") int product_Id) {
 		List<Products> product_List = productsService.getProductById(product_Id);

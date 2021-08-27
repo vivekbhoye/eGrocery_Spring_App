@@ -12,7 +12,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-
+/**
+ * 
+ * @author Vivek bhoye
+ *
+ */
 @Entity
 public class Customer extends Login implements Serializable{
 	
