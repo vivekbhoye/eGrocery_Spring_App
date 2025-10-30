@@ -5,7 +5,7 @@
 	<groupId>com.mph</groupId>
 	<artifactId>eGrocery_Spring_App</artifactId>
 	<packaging>war</packaging>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>5.2.22.RELEASE</version>
 	<name>eGrocery_Spring_App Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 
